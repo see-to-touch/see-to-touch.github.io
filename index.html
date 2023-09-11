@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js">
+</script>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="TAVI: See to Touch">
+  <meta property="og:description" content="TAVI: See to Touch">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TAVI: See to Touch">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TAVI: See to Touch">
+  <meta name="twitter:description"
+    content="">
+  <link rel="stylesheet" href="css/simple-grid.css">
+  <link rel="shortcut icon" href="mfiles/icon.png">
+
+  <title>TAVI: See to Touch</title>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="center col-12">
+          <h1>See to Touch: Learning Tactile Dexterity through Visual Incentives</h1>
+        </div>
+      </div>
+    </div>
+
+      <!--Intro video-->
+    <div class="container">
+      <div class="intro-vid">
+        <div class="col-12 center">
+          <body>
+            <iframe width="800" height="449" src="https://www.youtube.com/embed/Hssb7JPs78o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+        </body>
+        </div>
+      </div>
+    </div>
+
+    <!-- Abstract -->
+    <div class="container"> 
+      <div class="row">
+        <div class="col-12 justify">
+          <h3 class="center m-bottom">Summary</h2>
+          <p>
+            In this work, we present <b>Tactile Adaptation from Visual Incentives (TAVI)</b>, a framework that enhances tactile-based dexterity by
+            optimizing dexterous policies using vision-based rewards. First, we employ a novel contrastive-based objective to learn visual representations.
+            Next, we construct a reward function using these visual representations through optimal-transport based matching on one human demonstration.
+            Finally, we utilize online reinforcement learning on our robot to optimize tactile-based policies that maximize the visual reward.
+            We show the results of our framework in five different tasks.
+          </p>
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+
+
+       <!-- Policies -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-12">
+          <h2 class="center m-bottom">Policies</h2>
+          <p>
+            We evaluate our framework on several dexterous tasks that are difficult to solve with visual information alone.
+          </p>
+        </div>
+
+        <div class="col-4">
+          <h4 class="center">Sponge Flipping</h4>
+            <video width="320" playsinline muted autoplay loop>
+              <source src="./mfiles/tasks/sponge_compressed_small.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-4">
+          <h4 class="center">Eraser Turning</h4>
+            <video width="320" playsinline muted autoplay loop>
+              <source src="./mfiles/tasks/eraser_compressed_small.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="col-4">
+          <h4 class="center">Mint Opening</h4>
+            <video width="320" playsinline muted autoplay loop>
+              <source src="./mfiles/tasks/mint_opening_compressed_small.mp4" type="video/mp4">
+            </video>
+        </div>
+
+      </div>
+      
+      <div class="row">
+        <div class="col-4">
+          <h4 class="center">Peg Insertion</h4>
+          <video class="center" width="320" playsinline muted autoplay loop>
+            <source src="./mfiles/tasks/peg_compressed_small.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="col-4">
+          <h4 class="center">Plier Picking</h4>
+          <video class="center" width="320" playsinline muted autoplay loop>
+            <source src="./mfiles/tasks/plier_compressed_small.mp4" type="video/mp4">
+          </video>
+        </div> 
+        <div class="col-4">
+          <h4 class="center">Bowl Unstacking</h4>
+          <video class="center" width="320" playsinline muted autoplay loop>
+            <source src="./mfiles/tasks/bowl_compressed_small.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+
+    <!-- Generalization Experiments -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="center">Generalization</h3>
+          <p>
+            We observe that our tactile-based policies are able to learn residuals for objects that
+            are both visually and structurally different. 
+            A new residual policy is trained with each separate object.
+            Each object is experimented following a similar experimental setting as with the original object and observed success rates
+            are shown for each showcased object.
+          </p>
+        </div>
+
+        <div class="col-6">
+          <h4 class="center m-bottom">Bowl Unstacking</h4>
+          <video class="center" width="460" playsinline muted autoplay loop>
+            <source src="./mfiles/generalization/bowl_unstacking_gen_480.mov" type="video/mp4">
+          </video>
+          <p>
+            Robot rollout for bowl unstacking task on different bowls.
+          </p>
+        </div>
+        
+        <div class="col-6">
+          <h4 class="center m-bottom">Peg Insertion</h4>
+          <video class="center" width="460" playsinline muted autoplay loop>
+            <source src="./mfiles/generalization/peg_insertion_gen_480.mov" type="video/mp4">
+          </video>
+          <p>
+            Robot rollout for peg insertion for different pegs and cups. 
+          </p> 
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+
+    <!-- Training Rollouts -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="center">Training</h3>
+          <p>
+            Here, we showcase the training rollouts for each of our tasks.
+            We observe that as time passes the rewards increase and the policies become more and more robust.
+          </p>
+
+          <div class="center">
+            <img src="./mfiles/training/time_img.jpeg" style="max-width:1000px;width:100%" frameborder="0"
+            allowfullscreen></img>
+          </div>
+
+          <video class="center" width="1000" playsinline muted autoplay loop>
+            <source src="./mfiles/training/sponge_plier_training.m4v" type="video/mp4">
+          </video>
+
+          <video class="center" width="1000" playsinline muted autoplay loop>
+            <source src="./mfiles/training/eraser_peg_bowl_training.m4v" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+
+    <!-- All Rollouts -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="center m-bottom">All Training Rollouts</h2>
+          <p>
+            Here, we show all the robot experiments, trainings and evaluation rollouts for each of our tasks.
+          </p>
+          
+          <div class="col-12 center">
+            <h4 class="center">Sponge Flipping</h4>
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_flipping_output_0.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_flipping_output_40.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_flipping_output_80.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_flipping_output_120.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_flipping_output_160.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_flipping_output_200.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_flipping_output_240.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_flipping_output_280.mp4" type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+
+          <div class="col-12 center">
+            <h4 class="center">Eraser Turning</h4>
+            
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_turning_output_0.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_turning_output_40.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_turning_output_80.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_turning_output_120.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_turning_output_160.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_turning_output_200.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_turning_output_240.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/card_turning_output_280.mp4" type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+
+          <div class="col-12 center">
+            <h4 class="center">Peg Insertion</h4>
+            
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/peg_insertion_output_0.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/peg_insertion_output_40.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/peg_insertion_output_80.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/peg_insertion_output_120.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/peg_insertion_output_160.mp4" type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+
+          <div class="col-12 center">
+            <h4 class="center">Bowl Unstacking</h4>
+            
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/bowl_picking_output_0.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/bowl_picking_output_40.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/bowl_picking_output_120.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/bowl_picking_output_160.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/bowl_picking_output_200.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/bowl_picking_output_240.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/bowl_picking_output_280.mp4" type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+
+          <div class="col-12 center">
+            <h4 class="center">Plier Picking</h4>
+            
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_0.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_120.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_240.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_320.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_400.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_520.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_640.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_720.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_920.mp4" type="video/mp4">
+              </video>
+            </div> 
+
+            <div class="col-4">
+              <video controls class="center" width="300" playsinline muted autoplay loop>
+                <source src="./mfiles/all_trainings/plier_picking_output_960.mp4" type="video/mp4">
+              </video>
+            </div>
+
+          </div>
+          
+
+        </div>
+      </div>
+
+
+  </div>
+
+  <footer>
+  </footer>
+
+</body>
+
+</html>
