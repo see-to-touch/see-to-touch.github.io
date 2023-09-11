@@ -23,16 +23,77 @@
 
 <body>
   <div class="jumbotron">
+
+    <!-- Title + Authors + Code/Data -->
+
     <div class="container">
+
+      <!-- Title -->
       <div class="row">
         <div class="center col-12">
           <h1>See to Touch: Learning Tactile Dexterity through Visual Incentives</h1>
         </div>
       </div>
+
+      <!-- Paper + Code TODO -->
+      <!-- <div class="row"> 
+        <div class="col-3 hidden-sm"></div>
+        <div class="col-2 center">
+          <a style="text-decoration: none" href="https://arxiv.org/abs/2303.12076" download>
+            <h3 style="color: #F5A803">Paper</h3>
+          </a>
+        </div>
+        <div class="col-2 center">
+          <a style="text-decoration: none" href="https://drive.google.com/drive/folders/148ycBmuvqkdESvAhStlhYJ7ISMgelEvL?usp=sharing" download>
+            <h3 style="color: #F5A803">Data</h3>
+          </a>
+        </div>
+        <div class="col-2 center">
+          <a style="text-decoration: none" href="https://github.com/irmakguzey/tactile-dexterity" download>
+            <h3 style="color: #F5A803">Code</h3>
+          </a>
+        </div>
+      </div> -->
+
+      <!-- Author names -->
+      <div class="row">
+        <div class="col-4 center">
+          <a style="text-decoration: none" href="https://irmakguzey.github.io" download>
+            <h3>Irmak Guzey</h3>
+            <p>New York University</p>
+          </a>
+        </div>
+        <div class="col-4 center">
+          <a style="text-decoration: none" href="https://www.linkedin.com/in/yinlong-dai-28aa35168/" download>
+            <h3>Yinlong Dai</h3>
+            <p>New York University</p>
+          </a>
+        </div>
+        <div class="col-4 center">
+          <a style="text-decoration: none" href="https://bennevans.github.io/" download>
+            <h3>Ben Evans</h3>
+            <p>New York University</p>
+          </a>
+        </div>
+
+        <div class="col-6 center">
+          <a style="text-decoration: none"  href="https://soumith.ch/" download>
+            <h3>Soumith Chintala</h3>
+            <p>Meta</p>
+          </a>
+        </div>
+        <div class="col-6 center">
+          <a style="text-decoration: none" href="https://lerrelpinto.com/" download>
+            <h3>Lerrel Pinto</h3>
+            <p>New York University</p>
+          </a>
+        </div>
+      </div>
     </div>
 
+
       <!--Intro video-->
-    <div class="container">
+    <!-- <div class="container">
       <div class="intro-vid">
         <div class="col-12 center">
           <body>
@@ -40,7 +101,7 @@
         </body>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Abstract -->
     <div class="container"> 
@@ -156,6 +217,27 @@
       <hr>
     </div>
 
+    <!-- MultiTask Concatenation -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="center">Long Horizon Robustness</h3>
+          <p>
+            We experimented on the robustness of TAVI policies by concatenating multiple learned policies.
+            We observe that concatenated policies can zero-shot work
+            with the perturbations from different tasks.
+          </p>
+
+          <video class="center" width="1000" playsinline muted autoplay loop>
+            <source src="./mfiles/multi_task/multitask_website_video_compressed.mp4" type="video/mp4">
+          </video>
+
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>
+
     <!-- Training Rollouts -->
     <div class="container">
       <div class="row">
@@ -172,11 +254,11 @@
           </div>
 
           <video class="center" width="1000" playsinline muted autoplay loop>
-            <source src="./mfiles/training/sponge_plier_training.m4v" type="video/mp4">
+            <source src="./mfiles/training/sponge_plier_eraser_training.m4v" type="video/mp4">
           </video>
 
           <video class="center" width="1000" playsinline muted autoplay loop>
-            <source src="./mfiles/training/eraser_peg_bowl_training.m4v" type="video/mp4">
+            <source src="./mfiles/training/peg_bowl_mint_training.m4v" type="video/mp4">
           </video>
         </div>
       </div>
